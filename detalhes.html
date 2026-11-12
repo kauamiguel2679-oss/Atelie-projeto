@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça os detalhes dos produtos artesanais da Junt'Artes.">
+    <title>Detalhes do produto | Junt'Artes</title>
+    <link rel="stylesheet" href="style-detalhes.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="inicio.html" class="logo">Junt'Artes</a>
+
+        <nav class="menu" aria-label="Menu principal">
+            <a href="inicio.html">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="compra.html">
+                Carrinho
+                <span id="contadorCarrinho" class="contador-carrinho" hidden>0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <nav class="caminho" aria-label="Localização da página">
+            <a href="inicio.html">Início</a>
+            <span>/</span>
+            <a href="produtos.html">Produtos</a>
+            <span>/</span>
+            <span id="nomeCaminho">Detalhes</span>
+        </nav>
+
+        <!-- ÁREA DO PRODUTO -->
+
+        <section class="detalhes-produto" id="detalhesProduto" hidden>
+
+            <div class="detalhes-imagem">
+                <img
+                    id="imagemProduto"
+                    src=""
+                    alt="">
+            </div>
+
+            <div class="detalhes-info">
+
+                <span class="subtitulo" id="categoriaProduto"></span>
+
+                <h1 id="nomeProduto"></h1>
+
+                <p class="descricao-curta" id="descricaoProduto"></p>
+
+                <div class="preco-produto">
+                    <span class="preco-legenda">Valor da peça</span>
+
+                    <strong id="precoProduto"></strong>
+
+                    <p id="disponibilidadeProduto">
+                        Consulte a disponibilidade antes de finalizar.
+                    </p>
+                </div>
+
+                <!-- QUANTIDADE -->
+
+                <div class="quantidade-area">
+                    <label for="quantidadeProduto">Quantidade</label>
+
+                    <input
+                        type="number"
+                        id="quantidadeProduto"
+                        name="quantidade"
+                        min="1"
+                        max="99"
+                        value="1">
+                </div>
+
+                <!-- BOTÕES -->
+
+                <div class="acoes-produto">
+                    <button
+                        type="button"
+                        class="botao-carrinho"
+                        id="adicionarCarrinho">
+                        Adicionar ao carrinho
+                    </button>
+
+                    <a href="compra.html" class="botao-comprar">
+                        Ver carrinho
+                    </a>
+                </div>
+
+                <p class="aviso-produto">
+                    Por serem artesanais, as peças podem apresentar
+                    pequenas variações de cores e acabamento.
+                </p>
+
+                <p
+                    class="mensagem-produto"
+                    id="mensagemProduto"
+                    role="status"
+                    hidden>
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- PRODUTO NÃO ENCONTRADO -->
+
+        <section
+            class="produto-nao-encontrado"
+            id="produtoNaoEncontrado"
+            hidden>
+
+            <h1>Produto não encontrado</h1>
+
+            <p>
+                Não foi possível localizar a peça selecionada.
+                Volte ao catálogo para escolher outro produto.
+            </p>
+
+            <a href="produtos.html" class="botao-principal">
+                Voltar aos produtos
+            </a>
+
+        </section>
+
+        <!-- INFORMAÇÕES ADICIONAIS -->
+
+        <section class="informacoes" id="informacoesProduto" hidden>
+
+            <div class="titulo-secao">
+                <span>Conheça melhor</span>
+                <h2>Sobre esta peça</h2>
+            </div>
+
+            <div class="informacoes-conteudo">
+
+                <div class="informacao-item">
+                    <h3>Descrição</h3>
+
+                    <p id="descricaoCompleta"></p>
+                </div>
+
+                <div class="informacao-item">
+                    <h3>Produção artesanal</h3>
+
+                    <p>
+                        Cada peça possui características próprias,
+                        valorizando o cuidado e os detalhes do
+                        trabalho artesanal.
+                    </p>
+                </div>
+
+                <div class="informacao-item">
+                    <h3>Disponibilidade</h3>
+
+                    <p>
+                        A disponibilidade pode variar conforme
+                        o estoque e a produção da loja.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTINUAR COMPRANDO -->
+
+        <section class="continuar-comprando">
+            <h2>Quer conhecer outras peças?</h2>
+
+            <p>
+                Explore nosso catálogo e encontre outras opções
+                para decorar ou presentear.
+            </p>
+
+            <a href="produtos.html" class="botao-principal">
+                Ver outros produtos
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <a href="inicio.html" class="logo">Junt'Artes</a>
+
+        <p>Artesanato e decoração com personalidade.</p>
+
+        <a href="produtos.html" class="voltar-produtos">
+            Voltar aos produtos
+        </a>
+
+        <p class="direitos">
+            &copy; 2026 Junt'Artes. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <script src="./api.js" defer></script>
+    <script src="./detalhes.js" defer></script>
+
+</body>
+</html>

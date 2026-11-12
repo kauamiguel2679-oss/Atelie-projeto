@@ -1,0 +1,500 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rosa: #D81B60;
+    --rosa-escuro: #AD1457;
+    --rosa-claro: #FCE4EC;
+    --preto: #252025;
+    --cinza: #777078;
+    --branco: #FFFFFF;
+    --fundo: #FFFDFE;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--preto);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--rosa);
+    outline-offset: 3px;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 22px 7%;
+    background: var(--branco);
+    border-bottom: 1px solid #F0E7EB;
+}
+
+.logo {
+    color: var(--rosa);
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.menu a {
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: var(--rosa);
+}
+
+.menu a.ativo {
+    font-weight: bold;
+}
+
+.contador-carrinho {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 15px;
+    background: var(--rosa);
+    color: var(--branco);
+    font-size: 12px;
+}
+
+.contador-carrinho[hidden] {
+    display: none;
+}
+
+/* INTRODUÇÃO */
+
+.introducao {
+    padding: 55px 7%;
+    background: var(--rosa-claro);
+    text-align: center;
+}
+
+.subtitulo {
+    color: var(--rosa);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.introducao h1 {
+    margin: 12px 0;
+    font-size: clamp(30px, 4vw, 43px);
+}
+
+.introducao p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--cinza);
+    line-height: 1.8;
+}
+
+/* CATÁLOGO */
+
+.catalogo {
+    padding: 65px 7%;
+}
+
+.catalogo-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.catalogo-topo h2 {
+    margin-top: 8px;
+    font-size: 30px;
+}
+
+.catalogo-topo p {
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+/* PESQUISA */
+
+.pesquisa-produtos {
+    margin-bottom: 25px;
+}
+
+.pesquisa-produtos label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.pesquisa-produtos input {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    padding: 14px 16px;
+    border: 1px solid #E8DCE1;
+    border-radius: 6px;
+    background: var(--branco);
+    color: var(--preto);
+    font-size: 15px;
+}
+
+.pesquisa-produtos input:focus {
+    border-color: var(--rosa);
+}
+
+.pesquisa-produtos input::placeholder {
+    color: var(--cinza);
+}
+
+/* CATEGORIAS */
+
+.categorias-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.categorias-menu a {
+    display: inline-block;
+    padding: 11px 18px;
+    border: 1px solid #E8DCE1;
+    border-radius: 5px;
+    background: var(--branco);
+    color: var(--preto);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.categorias-menu a:hover,
+.categorias-menu a.categoria-ativa {
+    border-color: var(--rosa);
+    background: var(--rosa);
+    color: var(--branco);
+}
+
+/* PRODUTOS */
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.produto {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #F0E7EB;
+    border-radius: 8px;
+    background: var(--branco);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px #00000010;
+}
+
+.produto-imagem {
+    display: block;
+    height: 245px;
+    overflow: hidden;
+    background: var(--rosa-claro);
+}
+
+.produto-imagem img {
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.produto:hover .produto-imagem img {
+    transform: scale(1.04);
+}
+
+.produto-info {
+    padding: 20px;
+}
+
+.produto-categoria {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--rosa);
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.produto-info h3 {
+    margin-bottom: 9px;
+    font-size: 19px;
+}
+
+.produto-info p {
+    margin-bottom: 13px;
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.produto-preco {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--rosa);
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.botao-detalhes {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 5px;
+    background: var(--rosa);
+    color: var(--branco);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.botao-detalhes:hover {
+    background: var(--rosa-escuro);
+}
+
+.nenhum-produto {
+    margin-top: 25px;
+    padding: 35px 20px;
+    border: 1px solid #F0E7EB;
+    border-radius: 7px;
+    background: var(--rosa-claro);
+    color: var(--cinza);
+    text-align: center;
+}
+
+.nenhum-produto[hidden] {
+    display: none;
+}
+
+/* CONTATO */
+
+.contato {
+    padding: 65px 7%;
+    background: var(--rosa-claro);
+    text-align: center;
+}
+
+.contato h2 {
+    margin: 12px 0;
+    font-size: 30px;
+}
+
+.contato p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    color: var(--cinza);
+    line-height: 1.8;
+}
+
+.contato-botoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.botao-whatsapp,
+.botao-instagram {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 5px;
+    color: var(--branco);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.botao-whatsapp {
+    background: #238C50;
+}
+
+.botao-whatsapp:hover {
+    background: #176B3C;
+}
+
+.botao-instagram {
+    background: var(--rosa);
+}
+
+.botao-instagram:hover {
+    background: var(--rosa-escuro);
+}
+
+/* RODAPÉ */
+
+.rodape {
+    padding: 35px 7% 20px;
+    background: var(--branco);
+    text-align: center;
+}
+
+.rodape p {
+    margin-top: 12px;
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+.voltar-inicio {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--rosa);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.voltar-inicio:hover {
+    text-decoration: underline;
+}
+
+.rodape .direitos {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid #F0E7EB;
+    font-size: 12px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .cabecalho {
+        padding: 20px 4%;
+    }
+
+    .catalogo,
+    .contato {
+        padding: 50px 4%;
+    }
+
+    .produtos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+        padding: 18px 5%;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+        gap: 25px;
+        padding-top: 15px;
+        border-top: 1px solid #F0E7EB;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .introducao {
+        padding: 45px 5%;
+    }
+
+    .catalogo,
+    .contato {
+        padding: 45px 5%;
+    }
+
+    .catalogo-topo h2,
+    .contato h2 {
+        font-size: 26px;
+    }
+
+    .pesquisa-produtos input {
+        max-width: none;
+        font-size: 16px;
+    }
+
+    .categorias-menu {
+        gap: 9px;
+    }
+
+    .categorias-menu a {
+        padding: 10px 13px;
+        font-size: 13px;
+    }
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produto-imagem {
+        height: 260px;
+    }
+}
+
+@media (max-width: 360px) {
+    .menu {
+        gap: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

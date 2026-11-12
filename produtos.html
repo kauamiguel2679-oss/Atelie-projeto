@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore o catálogo de artesanato e decoração da Junt'Artes.">
+    <title>Produtos | Junt'Artes</title>
+    <link rel="stylesheet" href="style-produtos.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="inicio.html" class="logo">Junt'Artes</a>
+
+        <nav class="menu" aria-label="Menu principal">
+            <a href="inicio.html">Início</a>
+            <a href="produtos.html" class="ativo" aria-current="page">Produtos</a>
+            <a href="compra.html">
+                Carrinho
+                <span id="contadorCarrinho" class="contador-carrinho" hidden>0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="introducao">
+            <span class="subtitulo">Nosso catálogo</span>
+            <h1>Peças feitas com carinho.</h1>
+            <p>
+                Explore nossas criações e encontre algo especial
+                para decorar ou presentear.
+            </p>
+        </section>
+
+        <section class="catalogo">
+
+            <div class="catalogo-topo">
+                <div>
+                    <span class="subtitulo">Explore</span>
+                    <h2>Todos os produtos</h2>
+                </div>
+
+                <p id="quantidadeResultados" aria-live="polite"></p>
+            </div>
+
+            <!-- PESQUISA -->
+
+            <div class="pesquisa-produtos">
+                <label for="pesquisarProduto">Pesquisar produtos</label>
+
+                <input
+                    type="search"
+                    id="pesquisarProduto"
+                    placeholder="Digite o nome de uma peça..."
+                    autocomplete="off">
+            </div>
+
+            <!-- FILTROS -->
+
+            <nav class="categorias-menu" aria-label="Categorias de produtos">
+                <a href="#todos" data-filtro="todos" class="categoria-ativa">
+                    Todos
+                </a>
+
+                <a href="#decoracao" data-filtro="decoracao">
+                    Decoração
+                </a>
+
+                <a href="#tecido" data-filtro="tecido">
+                    Pintura e tecido
+                </a>
+
+                <a href="#artesanato" data-filtro="artesanato">
+                    Artesanato
+                </a>
+            </nav>
+
+            <!-- PRODUTOS GERADOS PELO JS -->
+
+            <div class="produtos-grid" id="listaProdutos">
+                <!-- O JavaScript criará os cards dos produtos -->
+            </div>
+
+            <p class="nenhum-produto" id="nenhumProduto" role="status" hidden>
+                Nenhum produto encontrado.
+            </p>
+
+        </section>
+
+        <!-- CONTATO -->
+
+        <section class="contato">
+            <span class="subtitulo">Fale conosco</span>
+
+            <h2>Gostou de alguma peça?</h2>
+
+            <p>
+                Entre em contato para consultar disponibilidade,
+                personalizações e outras informações.
+            </p>
+
+            <div class="contato-botoes">
+                <a
+                    href="https://wa.me/558294064669"
+                    class="botao-whatsapp"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    WhatsApp
+                </a>
+
+                <a
+                    href="https://www.instagram.com/ateliejuntartes/"
+                    class="botao-instagram"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Instagram
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <a href="inicio.html" class="logo">Junt'Artes</a>
+        <p>Artesanato e decoração com personalidade.</p>
+
+        <a href="inicio.html" class="voltar-inicio">
+            Voltar ao início
+        </a>
+
+        <p class="direitos">
+            &copy; 2026 Junt'Artes. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <script src="./api.js" defer></script>
+    <script src="./produtos.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confira seu carrinho e finalize seu pedido na Junt'Artes.">
+    <title>Finalizar compra | Junt'Artes</title>
+    <link rel="stylesheet" href="style-compra.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="inicio.html" class="logo">Junt'Artes</a>
+
+        <nav class="menu" aria-label="Menu principal">
+            <a href="inicio.html">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="compra.html" class="ativo" aria-current="page">
+                Carrinho
+                <span id="contadorCarrinho" class="contador-carrinho" hidden>0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="introducao">
+            <span class="subtitulo">Seu pedido</span>
+            <h1>Finalize sua compra.</h1>
+            <p>
+                Confira os produtos escolhidos e preencha
+                as informações necessárias para seu pedido.
+            </p>
+        </section>
+
+        <nav class="caminho" aria-label="Localização da página">
+            <a href="inicio.html">Início</a>
+            <span>/</span>
+            <a href="produtos.html">Produtos</a>
+            <span>/</span>
+            <span>Finalizar compra</span>
+        </nav>
+
+        <div class="compra-container">
+
+            <div class="compra-conteudo">
+
+                <!-- CARRINHO -->
+
+                <section class="caixa-compra" id="carrinho">
+
+                    <div class="titulo-caixa">
+                        <span class="numero-etapa">1</span>
+                        <div>
+                            <h2>Meu carrinho</h2>
+                            <p>Confira os produtos selecionados.</p>
+                        </div>
+                    </div>
+
+                    <div class="carrinho-lista" id="listaCarrinho">
+                        <!-- O JavaScript adicionará os itens aqui -->
+                    </div>
+
+                    <p class="carrinho-vazio" id="carrinhoVazio">
+                        Seu carrinho está vazio. Explore nosso catálogo
+                        e encontre algo especial!
+                    </p>
+
+                    <a href="produtos.html" class="continuar-comprando">
+                        + Continuar comprando
+                    </a>
+
+                </section>
+
+                <!-- FORMULÁRIO DE FINALIZAÇÃO -->
+
+                <form id="formularioCompra">
+
+                    <!-- DADOS PESSOAIS -->
+
+                    <section class="caixa-compra">
+
+                        <div class="titulo-caixa">
+                            <span class="numero-etapa">2</span>
+                            <div>
+                                <h2>Seus dados</h2>
+                                <p>Informe seus dados para identificação.</p>
+                            </div>
+                        </div>
+
+                        <div class="formulario-grid">
+
+                            <div class="campo campo-completo">
+                                <label for="nomeCliente">Nome completo</label>
+                                <input
+                                    type="text"
+                                    id="nomeCliente"
+                                    name="nome"
+                                    placeholder="Digite seu nome"
+                                    autocomplete="name"
+                                    required>
+                            </div>
+
+                            <div class="campo">
+                                <label for="telefoneCliente">Telefone</label>
+                                <input
+                                    type="tel"
+                                    id="telefoneCliente"
+                                    name="telefone"
+                                    placeholder="(82) 99999-9999"
+                                    autocomplete="tel"
+                                    required>
+                            </div>
+
+                            <div class="campo">
+                                <label for="emailCliente">E-mail (opcional)</label>
+                                <input
+                                    type="email"
+                                    id="emailCliente"
+                                    name="email"
+                                    placeholder="seuemail@exemplo.com"
+                                    autocomplete="email">
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <!-- ENTREGA -->
+
+                    <section class="caixa-compra">
+
+                        <div class="titulo-caixa">
+                            <span class="numero-etapa">3</span>
+                            <div>
+                                <h2>Entrega ou retirada</h2>
+                                <p>Escolha como deseja receber seus produtos.</p>
+                            </div>
+                        </div>
+
+                        <fieldset class="opcoes-escolha">
+                            <legend>Forma de recebimento</legend>
+
+                            <label class="opcao">
+                                <input
+                                    type="radio"
+                                    name="recebimento"
+                                    value="entrega"
+                                    checked>
+                                <span>Receber no endereço</span>
+                            </label>
+
+                            <label class="opcao">
+                                <input
+                                    type="radio"
+                                    name="recebimento"
+                                    value="retirada">
+                                <span>Retirar com a loja</span>
+                            </label>
+                        </fieldset>
+
+                        <div class="endereco" id="dadosEndereco">
+
+                            <div class="formulario-grid">
+
+                                <div class="campo">
+                                    <label for="cepCliente">CEP</label>
+                                    <input
+                                        type="text"
+                                        id="cepCliente"
+                                        name="cep"
+                                        placeholder="00000-000"
+                                        inputmode="numeric"
+                                        autocomplete="postal-code"
+                                        required>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="cidadeCliente">Cidade</label>
+                                    <input
+                                        type="text"
+                                        id="cidadeCliente"
+                                        name="cidade"
+                                        placeholder="Sua cidade"
+                                        autocomplete="address-level2"
+                                        required>
+                                </div>
+
+                                <div class="campo campo-completo">
+                                    <label for="ruaCliente">Rua / Avenida</label>
+                                    <input
+                                        type="text"
+                                        id="ruaCliente"
+                                        name="rua"
+                                        placeholder="Nome da rua"
+                                        autocomplete="address-line1"
+                                        required>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="numeroCliente">Número</label>
+                                    <input
+                                        type="text"
+                                        id="numeroCliente"
+                                        name="numero"
+                                        placeholder="Número"
+                                        required>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="bairroCliente">Bairro</label>
+                                    <input
+                                        type="text"
+                                        id="bairroCliente"
+                                        name="bairro"
+                                        placeholder="Seu bairro"
+                                        autocomplete="address-level3"
+                                        required>
+                                </div>
+
+                                <div class="campo campo-completo">
+                                    <label for="complementoCliente">
+                                        Complemento (opcional)
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="complementoCliente"
+                                        name="complemento"
+                                        placeholder="Apartamento, referência, etc.">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <p class="aviso-entrega">
+                            O valor e o prazo de entrega serão confirmados
+                            pela loja antes da conclusão do pedido.
+                        </p>
+
+                    </section>
+
+                    <!-- PAGAMENTO -->
+
+                    <section class="caixa-compra">
+
+                        <div class="titulo-caixa">
+                            <span class="numero-etapa">4</span>
+                            <div>
+                                <h2>Forma de pagamento</h2>
+                                <p>Selecione sua preferência.</p>
+                            </div>
+                        </div>
+
+                        <fieldset class="opcoes-pagamento">
+                            <legend>Escolha uma opção</legend>
+
+                            <label class="opcao-pagamento">
+                                <input
+                                    type="radio"
+                                    name="pagamento"
+                                    value="pix"
+                                    checked>
+                                <span>
+                                    <strong>Pix</strong>
+                                    <small>Transferência instantânea</small>
+                                </span>
+                            </label>
+
+                            <label class="opcao-pagamento">
+                                <input
+                                    type="radio"
+                                    name="pagamento"
+                                    value="cartao">
+                                <span>
+                                    <strong>Cartão</strong>
+                                    <small>Condições a confirmar com a loja</small>
+                                </span>
+                            </label>
+
+                            <label class="opcao-pagamento">
+                                <input
+                                    type="radio"
+                                    name="pagamento"
+                                    value="dinheiro">
+                                <span>
+                                    <strong>Dinheiro</strong>
+                                    <small>Pagamento combinado com a loja</small>
+                                </span>
+                            </label>
+                        </fieldset>
+
+                        <p class="aviso-pagamento">
+                            A escolha da forma de pagamento não realiza
+                            nenhuma cobrança automática.
+                        </p>
+
+                    </section>
+
+                    <!-- OBSERVAÇÕES -->
+
+                    <section class="caixa-compra">
+
+                        <div class="titulo-caixa">
+                            <span class="numero-etapa">5</span>
+                            <div>
+                                <h2>Observações do pedido</h2>
+                                <p>Deseja informar algum detalhe adicional?</p>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="observacoesPedido">
+                                Mensagem (opcional)
+                            </label>
+
+                            <textarea
+                                id="observacoesPedido"
+                                name="observacoes"
+                                rows="5"
+                                placeholder="Exemplo: gostaria de uma embalagem para presente."></textarea>
+                        </div>
+
+                    </section>
+
+                </form>
+
+            </div>
+
+            <!-- RESUMO DO PEDIDO -->
+
+            <aside class="resumo-compra">
+
+                <h2>Resumo do pedido</h2>
+
+                <div class="resumo-linha">
+                    <span>Quantidade de itens</span>
+                    <strong id="quantidadeItens">0</strong>
+                </div>
+
+                <div class="resumo-linha">
+                    <span>Produtos</span>
+                    <strong id="subtotalCompra">R$ 0,00</strong>
+                </div>
+
+                <div class="resumo-linha">
+                    <span>Entrega</span>
+                    <span id="valorEntrega">A confirmar</span>
+                </div>
+
+                <div class="resumo-total">
+                    <span>Subtotal</span>
+                    <strong id="totalCompra">R$ 0,00</strong>
+                </div>
+
+                <p class="resumo-aviso">
+                    O valor final será confirmado pela loja,
+                    incluindo possíveis custos de entrega.
+                </p>
+
+                <button
+                    type="submit"
+                    form="formularioCompra"
+                    class="botao-finalizar"
+                    id="finalizarPedido"
+                    disabled>
+                    Solicitar finalização
+                </button>
+
+                <p class="aviso-seguranca">
+                    Nenhum pagamento será cobrado nesta página.
+                    Aguarde a confirmação da loja.
+                </p>
+
+                <p
+                    class="mensagem-finalizacao"
+                    id="mensagemFinalizacao"
+                    role="status"
+                    hidden>
+                </p>
+
+                <a href="produtos.html" class="voltar-catalogo">
+                    Voltar ao catálogo
+                </a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="rodape">
+        <a href="inicio.html" class="logo">Junt'Artes</a>
+
+        <p>Artesanato e decoração com personalidade.</p>
+
+        <p class="direitos">
+            &copy; 2026 Junt'Artes. Todos os direitos reservados.
+        </p>
+    </footer>
+    
+    <script src="./api.js" defer></script>
+    <script src="./compra.js" defer></script>
+
+</body>
+</html>

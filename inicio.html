@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junt'Artes: artesanato, decoração e peças feitas com carinho.">
+    <title>Início | Junt'Artes</title>
+    <link rel="stylesheet" href="style-inicio.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="inicio.html" class="logo">Junt'Artes</a>
+
+        <nav class="menu" aria-label="Menu principal">
+            <a href="inicio.html" class="ativo" aria-current="page">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="compra.html">
+                Carrinho
+                <span class="contador-carrinho" id="contadorCarrinho" hidden>0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- BANNER -->
+
+        <section class="banner">
+            <div class="banner-conteudo">
+                <span class="subtitulo">Arte feita com carinho</span>
+
+                <h1>Detalhes que tornam tudo mais especial.</h1>
+
+                <p>
+                    Conheça nossas peças artesanais e encontre
+                    algo único para decorar ou presentear.
+                </p>
+
+                <a href="produtos.html" class="botao-principal">
+                    Conhecer produtos
+                </a>
+            </div>
+
+            <div class="banner-imagem">
+                <img
+                    src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1100&q=85"
+                    alt="Ambiente com decoração artesanal">
+            </div>
+        </section>
+
+        <!-- CATEGORIAS -->
+
+        <section class="categorias">
+            <div class="titulo-secao">
+                <span>Explore nossa loja</span>
+                <h2>Nossas categorias</h2>
+                <p>Encontre peças para diferentes gostos e ocasiões.</p>
+            </div>
+
+            <div class="categorias-grid">
+
+                <a href="produtos.html?categoria=decoracao" class="categoria-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=700&q=85"
+                        alt="Decoração artesanal"
+                        loading="lazy">
+
+                    <div class="categoria-info">
+                        <h3>Decoração</h3>
+                        <p>Detalhes para deixar seu ambiente especial.</p>
+                    </div>
+                </a>
+
+                <a href="produtos.html?categoria=tecido" class="categoria-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=700&q=85"
+                        alt="Trabalhos artesanais em tecido"
+                        loading="lazy">
+
+                    <div class="categoria-info">
+                        <h3>Pintura e tecido</h3>
+                        <p>Peças criativas feitas com dedicação.</p>
+                    </div>
+                </a>
+
+                <a href="produtos.html?categoria=artesanato" class="categoria-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=700&q=85"
+                        alt="Peças de artesanato"
+                        loading="lazy">
+
+                    <div class="categoria-info">
+                        <h3>Artesanato</h3>
+                        <p>Presentes e criações com personalidade.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- DESTAQUES DINÂMICOS -->
+
+        <section class="destaques">
+            <div class="titulo-secao">
+                <span>Feito para você</span>
+                <h2>Produtos em destaque</h2>
+                <p>Conheça algumas das nossas criações.</p>
+            </div>
+
+            <div class="produtos-grid" id="produtosDestaque">
+                <!-- O JavaScript adicionará os produtos aqui -->
+            </div>
+
+            <p class="mensagem-vazia" id="destaquesVazios" hidden>
+                Nenhum produto em destaque no momento.
+            </p>
+
+            <a href="produtos.html" class="botao-principal">
+                Ver todos os produtos
+            </a>
+        </section>
+
+        <!-- SOBRE -->
+
+        <section class="sobre">
+            <div class="sobre-conteudo">
+                <span class="subtitulo">Sobre a Junt'Artes</span>
+
+                <h2>Criatividade em cada detalhe.</h2>
+
+                <p>
+                    A Junt'Artes valoriza o trabalho artesanal
+                    e a criatividade presente em cada peça.
+                    Nosso objetivo é oferecer produtos especiais
+                    para decorar, presentear e transformar momentos.
+                </p>
+
+                <a
+                    href="https://www.instagram.com/ateliejuntartes/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao-principal">
+                    Conhecer nosso Instagram
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <a href="inicio.html" class="logo">Junt'Artes</a>
+
+        <p>Artesanato e decoração com personalidade.</p>
+
+        <p class="direitos">
+            &copy; 2026 Junt'Artes. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <script src="./api.js" defer></script>
+    <script src="./inicio.js" defer></script>
+
+</body>
+</html>
